@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Получить пользователя</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,300,600,800,700' rel='stylesheet' type='text/css'>
+<!--JQuerry-->
+</head>
+<body>
+<!---->
+<div class="header">
+	 <div class="container">
+	
+		 <div class="top-menu">
+				<span class="menu"> </span>
+				<ul>
+					<li class="active"><a href="index.html">Главная</a></li>
+					 <li><a href="RetriveUser.html"> получение</br> пользователя</a></li>
+					 <li><a href="RetriveUserList.html">получение</br>списка пользователей</a></li>
+                     <li><a href="UpdateUser.html">обновление</br>данных пользователея</a></li>						 
+					 <li class="top-contact"><a href="404.html">Error 404</a></li>	
+					 <li class="top-contact"><a href="500.html">Error 500</a></li>			 
+				 </ul>
+		 </div>
+		 <div class="clearfix"></div>  
+	 </div>
+</div>
+<!---->
+<div class="contact">
+	 <div class="contact-info">
+		 <div class="container">
+			 <a href="index.html">Главная/</a><h2>Обновление данных пользователя</h2>			 
+		 </div>		 
+	 </div>	 
+	 <div class="container">
+		 <p class="class-para">можно обновлять как имя, Email, или и то и другое</p>
+		 <div class="col-md-7 contact-para">					
+				<h5>Форма POST запрос</h5>
+			 <form id = "myForm" action ="http://localhost/xampp/myProject/api/POSTUpdateUser.php" method="post">
+				 <div class="grid-contact">
+						<div class="col-md-6 contact-grid">
+							<p >ID Пользователя</p>		
+							<input id="IDbox" type="text" name="ID" value="">
+							<p >новый ник</p>		
+							<input id="Nickbox" type="text"  name="Nick" value="">
+                             <p>Новый Email</p>		
+							<input id="Nickbox" type="text" name="Email" value="">							
+                             </ul>								
+						</div>
+						
+						<div id="write" class="col-md-6 contact-grid">
+						</div>
+						<div  class="clearfix"> </div>
+						<span id="result"></span>
+				 </div>
+					<div class="send">
+							<input id="sub" type="submit" value="Получить Пользователя">
+					</div>
+			 </form>
+		 </div>			 
+		 
+	 </div>
+</div>
+<!----->
+<div class="footer">
+	 <div class="container">
+		  <div class="social-media">			
+			 <a href="#"><i class="inst"></i></a>
+			 <a href="#"><i class="dribb"></i></a>
+			 <a href="#"><i class="twit"></i></a>			 
+		  </div>
+	 </div>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">
+		
+			
+			$("#sub").click(
+			function(){
+			$.post(
+			  $("myForm").attr("action"),
+			  $("#myForm :input").serializeArray());
+			  console.log("click");
+			});
+		
+			
+             
+		</script>
+</body>
+</html>
